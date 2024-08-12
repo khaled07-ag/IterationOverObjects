@@ -52,16 +52,26 @@ const movies = [
   })
   console.log(names)
   let total=0
-  const year94= movies.filter((year)=>{
+  const year94= movies.forEach((year)=>{
     if(year.year==1994){
-        return year
+      total= total+1
     }
   })
-  console.log(year94)
-movies[3].genre="Action/Drama"
-groupMoviesByGenre = movies.foreach((obj,key)=>{
-    if(obj.genre[key]){
-        return key +' '+obj.title
+  console.log(total)
+  function DarkKnight(movie){
+    movie[3].genre="Action/Drama"
+    return movie[3]
+  }
+  //console.log(DarkKnight(movies));
+let MoviesByGenre= {}
+const groupMoviesByGenre = movies.foreach((obj)=>{
+    MoviesByGenre={
+      Drama: obj.filter(obj=>obj.genre=="Drama"),
+      Crime: obj.filter(obj=>obj.genre=="Crime"),
+      Action: obj.filter(obj=>obj.genre=="Action"),
+      
     }
 })
-console.log(groupMoviesByGenre(movies,"Drama"));
+console.log(MoviesByGenre);
+
+
