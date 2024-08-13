@@ -65,8 +65,15 @@ const movies = [
   //console.log(DarkKnight(movies));
 let MoviesByGenre= {}
 const groupMoviesByGenre = movies.forEach((movie)=>{
-    MoviesByGenre[movie.genre] = movie.title
-})
-console.log(MoviesByGenre);
+    if (MoviesByGenre[movie.genre]) {
+        MoviesByGenre[movie.genre].push(movie.title);
+      } else {
+        MoviesByGenre[movie.genre] = [movie.title];
+      }
+      return MoviesByGenre
+    });
+  
+    
 
+console.log(MoviesByGenre);
 
