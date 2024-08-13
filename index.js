@@ -64,13 +64,8 @@ const movies = [
   }
   //console.log(DarkKnight(movies));
 let MoviesByGenre= {}
-const groupMoviesByGenre = movies.foreach((obj)=>{
-    MoviesByGenre={
-      Drama: obj.filter(obj=>obj.genre=="Drama"),
-      Crime: obj.filter(obj=>obj.genre=="Crime"),
-      Action: obj.filter(obj=>obj.genre=="Action"),
-      
-    }
+const groupMoviesByGenre = movies.forEach((movie)=>{
+    MoviesByGenre[movie.genre] = movie.title
 })
 console.log(MoviesByGenre);
 
